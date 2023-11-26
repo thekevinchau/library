@@ -1,0 +1,13 @@
+*{
+    margin: 0px;
+}
+
+.header{
+    background-color: rgb(172, 60, 172);
+    color: white;
+    height: 7.5vw;
+}
+
+.library{
+    display: grid;
+}
