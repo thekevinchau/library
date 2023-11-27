@@ -1,5 +1,10 @@
 *{
     margin: 0px;
+    font-family: Arial;
+}
+
+body{
+    background-color: rgb(246, 243, 246);
 }
 
 .header{
@@ -21,16 +26,33 @@
     margin-right: 2rem;
 }
 
+.read-div{
+    background-color: yellow;
+    position: absolute;
+    right: 0;
+    width: auto;
+    font-weight: bold;
+    font-family: Arial;
+    bottom: 0;
+}
 
 .library{
+    border: 1px solid red;
+    margin: 8rem;
     display: grid;
-    grid-template-columns: repeat(5, 10vw);
+    grid-template-columns: repeat(8, 10vw);
+    grid-auto-rows: 10vw;
+    grid-auto-columns: 10vw;
     grid-template-rows: repeat(5, 10vw);
     gap: 10px;
 }
 .library > div{
     border: solid 1px black;
+    position: relative;
 }
 div>h3{
     text-align: center;
+}
+div > p{
+    padding-left: 1em;
 }

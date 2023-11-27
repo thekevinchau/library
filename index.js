@@ -35,13 +35,18 @@ function displayBooks(array){
         pages.textContent = `Pages: ${Book.page}`;
         div.appendChild(pages);
 
-        let read = document.createElement('p');
+        let read = document.createElement('div');
         read.textContent = `Status: ${Book.read}`;
+        read.className = "read-div"
         div.appendChild(read);
 
 
         lib.appendChild(div);
     })
+}
+
+for (let i = 0; i < 30; i++){
+    library[i] = new Book('Harry Potter', 'JK Rowling', 321, 'read')
 }
 
 let bookCount = document.querySelector('#book-count')
