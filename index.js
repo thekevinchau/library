@@ -1,5 +1,8 @@
 let library = [
-    new Book('Harry Potter', 'JK Rowling', 321, 'read')
+    new Book('Harry Potter', 'JK Rowling', 321, 'read'),
+    new Book('Harry Potter', 'JK Rowling', 321, 'read'),
+    new Book('Harry Potter', 'JK Rowling', 321, 'read'),
+    
 ];
 
 function Book (title, author, page, read){
@@ -27,6 +30,14 @@ function displayBooks(array){
         let author = document.createElement('p');
         author.textContent = Book.author;
         div.appendChild(author);
+
+        let pages = document.createElement('p');
+        pages.textContent = Book.page;
+        div.appendChild(pages);
+
+        let read = document.createElement('p');
+        read.textContent = `Status: ${Book.read.toUpperCase()}`;
+        div.appendChild(read);
 
 
         lib.appendChild(div);
