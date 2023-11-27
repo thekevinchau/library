@@ -3,11 +3,34 @@
 }
 
 .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Arial;
     background-color: rgb(172, 60, 172);
     color: white;
     height: 7.5vw;
 }
 
+.header>p{
+    font-weight: bold;
+    margin: 2.5rem;
+    font-size: 2rem;
+}
+.header span{
+    margin-right: 2rem;
+}
+
+
 .library{
     display: grid;
+    grid-template-columns: repeat(5, 10vw);
+    grid-template-rows: repeat(5, 10vw);
+    gap: 10px;
+}
+.library > div{
+    border: solid 1px black;
+}
+div>h3{
+    text-align: center;
 }

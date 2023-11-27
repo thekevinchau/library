@@ -2,7 +2,7 @@ let library = [
     new Book('Harry Potter', 'JK Rowling', 321, 'read'),
     new Book('Harry Potter', 'JK Rowling', 321, 'read'),
     new Book('Harry Potter', 'JK Rowling', 321, 'read'),
-    
+
 ];
 
 function Book (title, author, page, read){
@@ -32,16 +32,19 @@ function displayBooks(array){
         div.appendChild(author);
 
         let pages = document.createElement('p');
-        pages.textContent = Book.page;
+        pages.textContent = `Pages: ${Book.page}`;
         div.appendChild(pages);
 
         let read = document.createElement('p');
-        read.textContent = `Status: ${Book.read.toUpperCase()}`;
+        read.textContent = `Status: ${Book.read}`;
         div.appendChild(read);
 
 
         lib.appendChild(div);
     })
 }
+
+let bookCount = document.querySelector('#book-count')
+bookCount.textContent = library.length;
 
 displayBooks(library);
