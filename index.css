@@ -1,10 +1,11 @@
-*{
-    margin: 0px;
-    font-family: Arial;
+:root{
+    --div-color:  rgb(192, 255, 215);
 }
 
-body{
-    background-color: rgb(246, 243, 246);
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    font-family: Arial;
 }
 
 .header{
@@ -12,9 +13,9 @@ body{
     justify-content: space-between;
     align-items: center;
     font-family: Arial;
-    background-color: rgb(172, 60, 172);
+    background-color: rgb(105, 159, 143);
     color: white;
-    height: 7.5vw;
+    height: 7vw;
 }
 
 .header>p{
@@ -27,32 +28,45 @@ body{
 }
 
 .read-div{
-    background-color: yellow;
-    position: absolute;
-    right: 0;
-    width: auto;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding-left: 0rem;
+    background-color: rgb(15, 232, 109);
+    align-self: flex-end;
     font-weight: bold;
     font-family: Arial;
-    bottom: 0;
 }
 
 .library{
-    border: 1px solid red;
-    margin: 8rem;
+    margin: 5rem;
     display: grid;
     grid-template-columns: repeat(8, 10vw);
     grid-auto-rows: 10vw;
     grid-auto-columns: 10vw;
     grid-template-rows: repeat(5, 10vw);
-    gap: 10px;
+    gap: 8rem;
 }
 .library > div{
-    border: solid 1px black;
-    position: relative;
+    width: 15em;
+    height: 15em;
+    background-color: var(--div-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: solid 2.5px rgb(37, 151, 37);
+    border-radius: 10px;
 }
+
+.library > div:hover{
+    opacity: 75%;
+}
+.library>span{
+    font-weight: bold;
+}
+
 div>h3{
     text-align: center;
 }
-div > p{
-    padding-left: 1em;
+.library > div > div{
+    margin-left: 10px;
 }
