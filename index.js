@@ -1,5 +1,6 @@
 let library = [
-    new Book('Harry Potter', 'JK Rowling', 381, true)
+    new Book('Harry Potter', 'JK Rowling', 381, true),
+    new Book('The Hunger Games', 'Suzanne Collins', 472, false)
 ];
 
 function Book (title, author, page, read){
@@ -8,16 +9,15 @@ function Book (title, author, page, read){
     this.page = page;
     this.read = read;
 }
-
-
 //we want to find a way to display books currently in array.
 
 function displayBooks(array){
     let lib = document.querySelector('.library');
     lib.innerHTML = '';
-    
+    let index = 0;
     array.forEach(Book => {
         let div = document.createElement('div');
+        div.id = index;
         
 
         //Display title
@@ -27,6 +27,23 @@ function displayBooks(array){
         title.style.textAlign = "center";
         title.style.fontWeight = "bold";
         title.textContent = Book.title;
+
+
+        let button = document.createElement('button');
+        button.textContent = "X"
+        button.style.backgroundColor = "inherit";
+        button.style.border = "none";
+        button.style.cursor = "pointer";
+        button.addEventListener('click', ()=>{
+            lib.removeChild(div);
+            array.splice(Book.title, 1)
+            div.id--;
+            console.log(array)
+            console.log(div.id);
+        })
+
+        title.appendChild(button)
+
         div.appendChild(title);
 
         //Display author
@@ -73,13 +90,10 @@ function displayBooks(array){
 
 
         lib.appendChild(div);
+        index++;
+        console.log(array);
     })
 }
-//Book count-top of page
-let bookCount = document.querySelector('#book-count')
-bookCount.textContent = library.length;
-
-
 let addBook = document.querySelector('.add-book')
 
 
@@ -88,7 +102,7 @@ let modal = document.querySelector('#book-modal');
 let closeButton = document.querySelector('#modal-close')
 
 addBook.addEventListener('click', () => modal.showModal())
-
+closeButton.addEventListener('click', () => modal.close())
 
 //Button to add a book
 let submitBtn = document.querySelector('#submit-btn')
@@ -113,7 +127,6 @@ submitBtn.addEventListener('click', (event) => {
     let newBook = new Book (authorInp, pageInp, numberInp, isRead);
     library.push(newBook);
     modal.close();
-    console.log('working');
     displayBooks(library);
 
     let inputs = document.querySelector('form');
@@ -121,5 +134,4 @@ submitBtn.addEventListener('click', (event) => {
 
     
 })
-
 displayBooks(library);
