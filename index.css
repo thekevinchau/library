@@ -16,6 +16,7 @@
     background-color: rgb(105, 159, 143);
     color: white;
     height: 7vw;
+    width: 100vw;
 }
 
 .header>p{
@@ -38,23 +39,23 @@
 }
 
 .library{
-    width: 95em;
+    width: 90rem;
     background-color: rgb(224, 220, 220);
     border-radius: 20px;
     padding: 2rem;
     padding-left: 2.5rem;
     margin: 5rem;
     display: grid;
-    grid-template-columns: repeat(5, 10vw);
-    grid-auto-rows: 10vw;
-    grid-auto-columns: 10vw;
-    grid-template-rows: repeat(5, 10vw);
+    grid-template-columns: repeat(5, 8vw);
+    grid-auto-rows: 2.5vw;
+    grid-auto-columns: 8vw;
+    grid-template-rows: repeat(5, 5vw);
     gap: 8rem;
     border: 5px solid rgb(37, 151, 37)
 }
 .library > div{
     width: 15em;
-    height: 15em;
+    height: 10em;
     background-color: var(--div-color);
     display: flex;
     flex-direction: column;
@@ -65,9 +66,6 @@
 
 .library > div:hover{
     opacity: 80%;
-}
-.library>span{
-    font-weight: bold;
 }
 
 div>h3{
@@ -94,82 +92,23 @@ input{
     opacity: 60%;
 }
 
+.modal-unread-button{
+    background-color: red;
+    color: white;
+    border: none;
+    padding-left: 1rem;
+
+}
+.modal-read-button{
+    padding-left: 1rem;
+    border: none;
+    background-color: green;
+    color: white;
+    width: 4.5rem;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+
+}
+
 
 /* Basic styling */
-
-[type=checkbox] {
-    width: 2rem;
-    height: 2rem;
-    color: rgb(105, 159, 143);
-    vertical-align: middle;
-    -webkit-appearance: none;
-    background: none;
-    border: 0;
-    outline: 0;
-    flex-grow: 0;
-    border-radius: 50%;
-    background-color: #FFFFFF;
-    transition: background 300ms;
-    cursor: pointer;
-  }
-  
-  
-  /* Pseudo element for check styling */
-  
-  [type=checkbox]::before {
-    content: "";
-    color: transparent;
-    display: block;
-    width: inherit;
-    height: inherit;
-    border-radius: inherit;
-    border: 0;
-    background-color: transparent;
-    background-size: contain;
-    box-shadow: inset 0 0 0 1px #CCD3D8;
-  }
-  
-  
-  /* Checked */
-  
-  [type=checkbox]:checked {
-    background-color: currentcolor;
-  }
-  
-  [type=checkbox]:checked::before {
-    box-shadow: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E %3Cpath d='M15.88 8.29L10 14.17l-1.88-1.88a.996.996 0 1 0-1.41 1.41l2.59 2.59c.39.39 1.02.39 1.41 0L17.3 9.7a.996.996 0 0 0 0-1.41c-.39-.39-1.03-.39-1.42 0z' fill='%23fff'/%3E %3C/svg%3E");
-  }
-  
-  
-  /* Disabled */
-  
-  [type=checkbox]:disabled {
-    background-color: #CCD3D8;
-    opacity: 0.84;
-    cursor: not-allowed;
-  }
-  
-  
-  /* IE */
-  
-  [type=checkbox]::-ms-check {
-    content: "";
-    color: transparent;
-    display: block;
-    width: inherit;
-    height: inherit;
-    border-radius: inherit;
-    border: 0;
-    background-color: transparent;
-    background-size: contain;
-    box-shadow: inset 0 0 0 1px #CCD3D8;
-  }
-  
-  [type=checkbox]:checked::-ms-check {
-    box-shadow: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E %3Cpath d='M15.88 8.29L10 14.17l-1.88-1.88a.996.996 0 1 0-1.41 1.41l2.59 2.59c.39.39 1.02.39 1.41 0L17.3 9.7a.996.996 0 0 0 0-1.41c-.39-.39-1.03-.39-1.42 0z' fill='%23fff'/%3E %3C/svg%3E");
-  }
-  [type=checkbox]:not(:checked){
-    background-color: orange;
-  }
