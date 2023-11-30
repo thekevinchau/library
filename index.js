@@ -1,6 +1,6 @@
 let library = [
-    new Book ('hello', 'hello', 123, true),
-    new Book ('bye', 'bye', 90, true)
+    new Book ('Harry Potter', 'JK Rowling', 345, true),
+    new Book ('LeBron James', 'Pookie Bear', 90, false)
 ]
 
 
@@ -12,10 +12,12 @@ function Book (title, author, pages, readStatus){
 }
 
 function createTitle(Book){
+    let div = document.createElement('div')
     let cardHeader = document.createElement('h3');
     cardHeader.textContent = Book.title;
+    div.appendChild(cardHeader);
 
-    return cardHeader;
+    return div;
 }
 
 function createAuthor(Book){
@@ -39,6 +41,7 @@ function addBook(array){
     array.forEach(Book => {
         let bookCard = document.createElement('div');
         let title = createTitle(Book);
+        title.style.overflow = "scroll";
         bookCard.appendChild(title);
         bookCard.appendChild(createAuthor(Book))
         bookCard.appendChild(createPages(Book))
