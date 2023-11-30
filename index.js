@@ -50,6 +50,7 @@ function displayBooks(array){
         let label = document.createElement('label');
         label.textContent = "Have you read it?"
         checkBox.type = "checkbox"
+        checkBox.style.marginLeft = ".5rem";
         let checkBoxDiv = document.createElement('div');
         checkBoxDiv.appendChild(label);
         checkBoxDiv.appendChild(checkBox);
