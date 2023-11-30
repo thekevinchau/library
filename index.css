@@ -38,13 +38,19 @@
 }
 
 .library{
+    width: 95em;
+    background-color: rgb(224, 220, 220);
+    border-radius: 20px;
+    padding: 2rem;
+    padding-left: 2.5rem;
     margin: 5rem;
     display: grid;
-    grid-template-columns: repeat(8, 10vw);
+    grid-template-columns: repeat(5, 10vw);
     grid-auto-rows: 10vw;
     grid-auto-columns: 10vw;
     grid-template-rows: repeat(5, 10vw);
     gap: 8rem;
+    border: 5px solid rgb(37, 151, 37)
 }
 .library > div{
     width: 15em;
@@ -53,7 +59,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: solid 2.5px rgb(37, 151, 37);
+    border: solid 3.5px rgb(37, 151, 37);
     border-radius: 10px;
 }
 
@@ -71,12 +77,30 @@ div>h3{
     margin-left: 10px;
 }
 
+input{
+    display: block;
+}
+
+.add-book{
+    background-color: inherit;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-right: 1rem;
+    height: 7vw;
+}
+.add-book:hover{
+    opacity: 60%;
+}
+
+
 /* Basic styling */
 
 [type=checkbox] {
     width: 2rem;
     height: 2rem;
-    color: dodgerblue;
+    color: rgb(105, 159, 143);
     vertical-align: middle;
     -webkit-appearance: none;
     background: none;

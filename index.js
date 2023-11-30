@@ -1,24 +1,18 @@
-let library = [
-    new Book('Harry Potter deathly hallows', 'JK Rowling', 321, 'read'),
-    new Book('Harry Potter: Order of the Phoenix', 'JK Rowling', 321, 'read'),
-    new Book('Harry Potter', 'JK Rowling', 321, 'unread'),
-
-];
+let library = [];
 
 function Book (title, author, page, read){
     this.title = title;
     this.author = author;
     this.page = page;
-    this.read = read;
 }
+
 
 //we want to find a way to display books currently in array.
 
 function displayBooks(array){
     let lib = document.querySelector('.library');
     lib.innerHTML = '';
-
-
+    
     array.forEach(Book => {
         let div = document.createElement('div');
         
@@ -46,20 +40,24 @@ function displayBooks(array){
 
 
         //Display check box to decide read or not
-        let checkBox = document.createElement('input');
+
+        let checkBoxArea = document.createElement('div');
+        
         let label = document.createElement('label');
-        label.textContent = "Have you read it?"
-        checkBox.type = "checkbox"
-        checkBox.style.marginLeft = ".5rem";
-        let checkBoxDiv = document.createElement('div');
-        checkBoxDiv.appendChild(label);
-        checkBoxDiv.appendChild(checkBox);
-        div.appendChild(checkBoxDiv);
+        label.textContent = "Read?"
+        let checkBox = document.createElement('input');
+        checkBox.type = "checkbox";
+        label.style.marginRight = ".5rem"
 
+        
+        checkBoxArea.appendChild(label);
+        checkBoxArea.appendChild(checkBox);
 
+        div.appendChild(checkBoxArea);
+
+        //Div that displays whether it's read or not
         let read = document.createElement('div');
-        Book.read === "read" ? read.style.backgroundColor = "#259725" : read.style.backgroundColor = "orange";
-        read.textContent = `Status: ${Book.read}`;
+
         read.className = "read-div"
         div.appendChild(read);
 
@@ -67,8 +65,37 @@ function displayBooks(array){
         lib.appendChild(div);
     })
 }
-
+//Book count-top of page
 let bookCount = document.querySelector('#book-count')
 bookCount.textContent = library.length;
+
+
+let addBook = document.querySelector('.add-book')
+
+
+//all modal related selectors
+let modal = document.querySelector('#book-modal');
+let closeButton = document.querySelector('#modal-close')
+
+closeButton.addEventListener('click', ()=> modal.closeModal())
+addBook.addEventListener('click', () => modal.showModal())
+
+
+let submitBtn = document.querySelector('#submit-btn')
+submitBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    let authorInp = document.querySelector('#title-input').value;
+    let pageInp = document.querySelector('#author-input').value;
+    let numberInp = document.querySelector('#number-input').value;
+
+    let newBook = new Book (authorInp, pageInp, numberInp);
+    library.push(newBook);
+    modal.close();
+    console.log('working');
+    displayBooks(library);
+
+    
+})
 
 displayBooks(library);

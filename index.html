@@ -11,13 +11,33 @@
     <div class="header">
         <p>Library</p>
         <span>Book Count: <span id="book-count"></span></span>
+        <button class="add-book">Add a Book!</button>
     </div>
 
     <div class="container">
-
         <div class="library">
         </div>
     </div>
+
+    <dialog id="book-modal">
+        <form>
+            <label>Title:</label>
+            <input type="text" id="title-input" required>
+
+            <label>Author:</label>
+            <input type="text" id="author-input" required>
+
+            <label>Pages</label>
+            <input type="number" id="number-input" required>
+
+            <label>Has it been read?</label>
+            <input type="checkbox" id="read-check" style="margin-bottom:1rem;">
+
+
+            <button id="modal-close">Close</button>
+            <button id="submit-btn" type="submit">Add Book</button>
+        </form>
+    </dialog>
     
 </body>
 </html>
