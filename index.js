@@ -4,20 +4,21 @@ let library = [
 ]
 
 
-function Book (title, author, pages, readStatus){
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.readStatus = readStatus;
-}
-
-function createTitle(Book){
-    let div = document.createElement('div')
-    let cardHeader = document.createElement('h3');
-    cardHeader.textContent = Book.title;
-    div.appendChild(cardHeader);
-
-    return div;
+class Book{
+    constructor(title, author, pages, readStatus){
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.readStatus = readStatus;
+    }
+    createTitle(Book){
+        let div = document.createElement('div')
+        let cardHeader = document.createElement('h3');
+        cardHeader.textContent = Book.title;
+        div.appendChild(cardHeader);
+    
+        return div;
+    }
 }
 
 function createAuthor(Book){
