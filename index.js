@@ -1,47 +1,48 @@
+class Book{
+    constructor(title, author, pages, readStatus){
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.readStatus = readStatus;
+    }
+    createTitle(Book){
+        let div = document.createElement('div')
+        let cardHeader = document.createElement('h3');
+        cardHeader.textContent = Book.title;
+        div.appendChild(cardHeader);
+    
+        return div;
+    }
+
+    createAuthor(Book){
+        let cardAuthor = document.createElement('div');
+        cardAuthor.textContent = "Author: " + Book.author;
+    
+        return cardAuthor;
+    }
+    createPages(Book){
+        let cardPages = document.createElement('div');
+        cardPages.textContent = "Pages: " + Book.pages;
+    
+        return cardPages;
+    }
+}
+
 let library = [
-    new Book ('hello', 'hello', 123, true),
-    new Book ('bye', 'bye', 90, true)
+    new Book ('Harry Potter', 'JK Rowling', 345, true),
+    new Book ('LeBron James', 'Pookie Bear', 90, false)
 ]
-
-
-function Book (title, author, pages, readStatus){
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.readStatus = readStatus;
-}
-
-function createTitle(Book){
-    let cardHeader = document.createElement('h3');
-    cardHeader.textContent = Book.title;
-
-    return cardHeader;
-}
-
-function createAuthor(Book){
-    let cardAuthor = document.createElement('div');
-    cardAuthor.textContent = "Author: " + Book.author;
-
-    return cardAuthor;
-}
-
-function createPages(Book){
-    let cardPages = document.createElement('div');
-    cardPages.textContent = "Pages: " + Book.pages;
-
-    return cardPages;
-}
-
 function addBook(array){
     let lib = document.querySelector('.library');
     lib.innerHTML = "";
 
     array.forEach(Book => {
         let bookCard = document.createElement('div');
-        let title = createTitle(Book);
+        let title = Book.createTitle(Book);
+        title.style.overflow = "scroll";
         bookCard.appendChild(title);
-        bookCard.appendChild(createAuthor(Book))
-        bookCard.appendChild(createPages(Book))
+        bookCard.appendChild(Book.createAuthor(Book))
+        bookCard.appendChild(Book.createPages(Book))
 
         let readButton = document.createElement('div');
         let deleteButton = document.createElement('div');
